@@ -70,7 +70,7 @@ class AvaliacaoControllerIntegrationTest {
 
         mockMvc.perform(get("/avaliacoes?autor=pedro"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)));
+                .andExpect(jsonPath("$", hasSize(3)));
     }
 
     @org.junit.jupiter.api.Test
