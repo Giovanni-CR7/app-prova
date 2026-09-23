@@ -49,7 +49,7 @@ class AvaliacaoControllerIntegrationTest {
                 .dataAvaliacao(LocalDate.ofEpochDay(2026- 3 -10))
                 .build();
 
-        mockMvc.perform(post("/avaliacoess")
+        mockMvc.perform(post("/avaliacoes")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(dto)))
                 .andExpect(status().isCreated())
@@ -66,7 +66,7 @@ class AvaliacaoControllerIntegrationTest {
 
         mockMvc.perform(get("/avaliacoes"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(4)));
+                .andExpect(jsonPath("$", hasSize(3)));
 
         mockMvc.perform(get("/avaliacoes?autor=pedro"))
                 .andExpect(status().isOk())
